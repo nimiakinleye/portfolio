@@ -53,7 +53,7 @@ nav {
   py-2;
 }
 .fixed_header {
-  transition: 1s;
+  transition: .5s;
   @apply fixed
   top-0
   w-full

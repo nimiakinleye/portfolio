@@ -1,9 +1,9 @@
 <template>
   <div>
-		<Header />
+		<Header id="home"/>
     <Banner />
     <Benefits />
-    <Portfolio />
+    <Portfolio id="portfolio"/>
 	</div>
 </template>
 
@@ -19,8 +19,34 @@ export default {
     Benefits,
     Portfolio,
   },
+  data () {
+    return {
+      clicked: false
+    }
+  },
+  methods: {
+    getHash() {
+      // if (window.pageYOffset > 1500 && !this.clicked) {
+      //   window.location.hash = 'portfolio'
+      // } else {
+      //   window.location.hash = null
+      // }
+      window.location.hash = null
+      // console.log('scrolling')
+    },
+    setClick() {
+      this.clicked = true
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.getHash)
+    // window.addEventListener('click', this.setClick)
+  }
 }
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 </style>

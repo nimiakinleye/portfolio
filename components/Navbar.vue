@@ -1,14 +1,14 @@
 <template>
   <div>
     <nav>
-      <nuxt-link to="/" class="nav-link">Portfolio</nuxt-link>
-      <nuxt-link to="/" class="nav-link">Home</nuxt-link>
-      <nuxt-link to="/" class="nav-link">Contact Me</nuxt-link>
+      <div @click="navigate('portfolio')" class="nav-link">Portfolio</div>
+      <div @click="navigate('home')" class="nav-link">Home</div>
+      <div class="nav-link">Contact Me</div>
     </nav>
     <nav :class="{ show: position, hide: !position }" class="fixed_header">
-      <nuxt-link to="/" class="nav-link">Portfolio</nuxt-link>
-      <nuxt-link to="/" class="nav-link">Home</nuxt-link>
-      <nuxt-link to="/" class="nav-link">Contact Me</nuxt-link>
+      <div @click="navigate('portfolio')" class="nav-link">Portfolio</div>
+      <div @click="navigate('home')" class="nav-link">Home</div>
+      <div class="nav-link">Contact Me</div>
     </nav>
   </div>
 </template>
@@ -28,6 +28,10 @@ export default {
       } else {
         this.position = false
       }
+    },
+    navigate (data) {
+      window.location.hash = data
+      console.log(data)
     }
   },
   mounted () {

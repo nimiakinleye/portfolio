@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="my-10 w-10/12 ml-auto" data-aos="zoom-in"> -->
   <div class="my-10 w-10/12 mx-auto lg:ml-auto">
     <div class="flex flex-col shadow-2xl">
       <img class="rounded-t-lg" src="~/assets/cashdrive.png" alt="" />

@@ -63,7 +63,9 @@ export default {
 }
 
 .caption {
-  @apply ml-12
+  @apply lg:ml-12
+  ml-auto
+  px-2
   pb-2;
 }
 .sticky {

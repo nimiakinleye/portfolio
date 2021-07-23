@@ -1,9 +1,9 @@
 <template>
   <div class="my-10 w-10/12 mx-auto lg:ml-auto">
     <div class="flex flex-col shadow-2xl">
-      <img class="rounded-t-lg" src="~/assets/cashdrive.png" alt="" />
+      <img class="rounded-t-lg" src="~/assets/cashdrive.png" alt="website_snapshot" />
       <div class="flex justify-between my-bg py-4 p-2 rounded-b-lg">
-        <a href="#">https://cashdrive.co/</a>
+        <a href="https://cashdrive.co/" target="_blank">https://cashdrive.co/</a>
         <svg
           width="24"
           height="24"
@@ -39,9 +39,7 @@
 </template>
 
 <script>
-import aosMixin from '~/mixins/aos'
 export default {
-  mixins: [aosMixin]
 }
 </script>
 

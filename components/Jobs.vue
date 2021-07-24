@@ -1,51 +1,112 @@
 <template>
-  <div class="my-10 w-10/12 mx-auto lg:ml-auto">
-    <div class="flex flex-col shadow-2xl">
-      <img class="rounded-t-lg" src="~/assets/cashdrive.png" alt="website_snapshot" />
-      <div class="flex justify-between my-bg py-4 p-2 rounded-b-lg">
-        <a href="https://cashdrive.co/" target="_blank">https://cashdrive.co/</a>
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+  <div>
+    <div v-for="(job, i) in jobs" :key="i" class="job">
+      <div class="flex flex-col shadow-2xl">
+        <img
+          class="rounded-t-lg"
+          :src="'https://api.apiflash.com/v1/urltoimage?access_key='+ access_key + '&format=png&url=https://' + job.url"
+          alt="website_snapshot"
+        />
+        <a
+          class="flex justify-between my-bg py-4 p-2 rounded-b-lg"
+          :href="'https://' + job.url"
+          target="_blank"
         >
-          <path
-            d="M21 3L13.93 19.97L11.42 12.58L4.03 10.07L21 3Z"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M11 13L5 19"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+          <div>https://{{ job.url }}</div>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 3L13.93 19.97L11.42 12.58L4.03 10.07L21 3Z"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M11 13L5 19"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
       </div>
+      <h4 class="firm">{{ job.firm }}</h4>
+      <p class="job_description">
+        {{ job.job_description }}
+      </p>
     </div>
-    <h4 class="firm">Cashdrive</h4>
-    <p class="job_description">
-      Solely responsible for the development of the product’s app user
-      intercace, ranging from the User App to the Admin App. The afore mentioned
-      was achieved with NuxtJs, an extended framework of VueJs which is a
-      framework of JavaScript.
-    </p>
   </div>
 </template>
 
 <script>
+import axios from '@nuxtjs/axios'
 export default {
+  data() {
+    return {
+      jobs: [
+        {
+          firm: 'Cashdrive',
+          job_description: `Was solely responsible for the development of the product’s app user
+      intercace, ranging from the User App to the Admin App. The afore mentioned
+      was achieved with NuxtJs, an extended framework of VueJs which is a
+      framework of JavaScript.`,
+          url: 'cashdrive.co',
+        },
+        {
+          firm: 'Self-paced',
+          job_description: `Built a sample landing page`,
+          url: 'nimi-paynyce.netlify.app',
+        },
+        {
+          firm: 'Self-paced',
+          job_description: `Built a sample app to display employee info`,
+          url: 'nimi-flipstaff.netlify.app/home/',
+        },
+      ],
+      snapshots: [],
+      snapshots_updated: false,
+      access_key: '1c8139ae2cca40e28c8cc585bbc75bd5',
+      // access_key: '1Furfhe8BFbkEhXn1xcYPr8jYAACNpfV7p'
+    }
+  },
+  // methods: {
+  //   async updateSnapshots() {
+  //     let url_list = this.jobs
+  //     url_list.map(job => {
+  //       fetch(`https://api.apiflash.com/v1/urltoimage?access_key=${this.access_key}&format=png&url=https://${job.url}`)
+  //       .then(res => {
+  //         console.log(res)
+  //       })
+  //     })
+  //   }
+  // },
+  // mounted() {
+  //   this.updateSnapshots()
+  // }
 }
 </script>
 
 <style>
 .my-bg {
   background-color: #374151;
+}
+
+.job {
+  @apply mb-10
+   w-10/12 
+   mx-auto 
+  lg:ml-auto;
+}
+
+.job a:hover {
+  @apply bg-gray-800
 }
 
 a {
@@ -59,6 +120,6 @@ a {
 }
 
 .job_description {
-  @apply text-sm
+  @apply text-sm;
 }
 </style>

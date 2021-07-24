@@ -16,10 +16,7 @@
     <div class="lg:grid grid-cols-4 jobs">
       <div class="col-start-1 col-end-3 bg-black bg-opacity-0"></div>
       <div class="col-start-3 col-end-5" data-aos="zoom-in">
-        <Jobs />
-        <Jobs />
-        <Jobs />
-        <Jobs />
+        <div class="inform">This section is scrollable</div>
         <Jobs />
       </div>
     </div>
@@ -68,11 +65,6 @@ export default {
   px-2
   pb-2;
 }
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 50px;
-}
 
 .jobs {
   @apply lg:mr-24
@@ -86,5 +78,19 @@ export default {
 
 .jobs::-webkit-scrollbar {
   display: none;
+}
+
+.inform {
+  @apply sticky
+  top-0
+  text-center
+  w-full
+  bg-black
+  text-white
+  bg-opacity-50
+  py-2
+  lg:rounded-b-xl;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
 }
 </style>

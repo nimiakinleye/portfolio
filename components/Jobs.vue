@@ -4,7 +4,12 @@
       <div class="flex flex-col shadow-2xl">
         <img
           class="rounded-t-lg"
-          :src="'https://api.apiflash.com/v1/urltoimage?access_key='+ access_key + '&format=png&url=https://' + job.url"
+          :src="
+            'https://api.apiflash.com/v1/urltoimage?access_key=' +
+            access_key +
+            '&format=png&url=https://' +
+            job.url
+          "
           alt="website_snapshot"
         />
         <a
@@ -60,6 +65,18 @@ export default {
           url: 'cashdrive.co',
         },
         {
+          firm: 'Credit-Card',
+          job_description: `I worked on this project which is yet to be released by the company as the UI and Front-end developer. I was completely
+responsible for the user interface's development as well as
+API consumption`,
+          url: 'creditcard.cashdrive.co',
+        },
+        {
+          firm: 'Self-paced',
+          job_description: `I designed a webapp to display weather information of desired locations, using open weather API`,
+          url: 'nimi-weather-app.netlify.com',
+        },
+        {
           firm: 'Self-paced',
           job_description: `Built a sample landing page`,
           url: 'nimi-paynyce.netlify.app',
@@ -106,7 +123,7 @@ export default {
 }
 
 .job a:hover {
-  @apply bg-gray-800
+  @apply bg-gray-800;
 }
 
 a {

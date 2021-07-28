@@ -125,6 +125,7 @@ export default {
   -webkit-backdrop-filter: none;
   border-radius: none;
   border: none;
+  -webkit-animation: wiggle 0.5s;
   animation: wiggle 0.5s;
 }
 

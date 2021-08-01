@@ -65,13 +65,6 @@ export default {
           url: 'cashdrive.co',
         },
         {
-          firm: 'Credit-Card',
-          job_description: `I worked on this project which is yet to be released by the company as the UI and Front-end developer. I was completely
-responsible for the user interface's development as well as
-API consumption`,
-          url: 'creditcard.cashdrive.co',
-        },
-        {
           firm: 'Self-paced',
           job_description: `I designed a webapp to display weather information of desired locations, using open weather API`,
           url: 'nimi-weather-app.netlify.com',

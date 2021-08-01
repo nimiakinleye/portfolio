@@ -74,11 +74,6 @@ export default {
           job_description: `Built a sample landing page`,
           url: 'nimi-sample.netlify.app',
         },
-        {
-          firm: 'Self-paced',
-          job_description: `Built a sample app to display employee info`,
-          url: 'nimi-staff.netlify.app/home/',
-        },
       ],
       snapshots: [],
       snapshots_updated: false,

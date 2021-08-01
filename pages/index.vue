@@ -13,6 +13,11 @@ import Banner from '~/components/Banner.vue'
 import Benefits from '~/components/Benefits.vue'
 import Portfolio from '~/components/Portfolio.vue'
 export default {
+  head () {
+    return {
+      title: 'NimiAkinleye'
+    }
+  },
   components: {
     Header,
     Banner,

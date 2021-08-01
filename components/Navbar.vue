@@ -45,6 +45,7 @@ nav {
   @apply flex
   divide-x-2
   justify-center
+  items-center
   my-4
   text-xs
   md:text-base;
@@ -54,7 +55,9 @@ nav {
   px-4
   md:px-8
   font-semibold
-  py-2;
+  py-2
+  cursor-pointer
+  hover:text-gray-500;
 }
 .fixed_header {
   transition: .5s;

@@ -5,7 +5,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nimi-portfolio',
+    title: 'NimiAkinleye',
     htmlAttrs: {
       lang: 'en'
     },

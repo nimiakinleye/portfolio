@@ -12,7 +12,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: `Hi there. Welcome, My name is Toluwanimi. I'm an experienced Front-end web developer with in-depth knowledge in JavaScript front-end frameworks (Vue.js and React.js).` },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [

@@ -99,19 +99,19 @@
           <div class="md:grid grid-cols-2 gap-x-12">
             <div class="input">
               <label for="first_name">First Name</label>
-              <input type="text" />
+              <input name="first_name" v-model="form.first_name" type="text" />
             </div>
             <div class="input">
               <label for="last_name">Last Name</label>
-              <input type="text" />
+              <input name="last_name" v-model="form.last_name" type="text" />
             </div>
             <div class="input">
               <label for="email">Mail</label>
-              <input type="text" />
+              <input name="email" v-model="form.mail" type="text" />
             </div>
             <div class="input">
               <label for="phone">Phone</label>
-              <input type="text" />
+              <input name="phone" v-model="form.phone" type="text" />
             </div>
           </div>
           <div class="input">
@@ -154,13 +154,14 @@
           <div class="input">
             <label for="message">Message</label>
             <textarea
+              v-model="form.message"
               name="message"
               id=""
               placeholder="Write your message..."
             ></textarea>
           </div>
           <div class="button">
-            <button type="submit">Send Message</button>
+            <button type="submit">{{ button_text }}</button>
           </div>
         </form>
       </div>
@@ -172,6 +173,7 @@
 export default {
   data() {
     return {
+      button_text: 'Send Message',
       form: {
         first_name: '',
         last_name: '',
@@ -183,13 +185,26 @@ export default {
           logo_design: false,
           other: false,
         },
-        messsage: '',
+        message: '',
       },
     }
   },
   methods: {
-    submit() {
-      console.log(this.form)
+    async submit() {
+      this.button_text = 'Sending Message...'
+      await this.$axios
+        .post(
+          'https://my-portfolio-a0539-default-rtdb.firebaseio.com/messages.json',
+          { message: this.form }
+        )
+        .then((res) => {
+          console.log(res)
+          if(res.status === 200) {
+            this.button_text = 'Message Sent!'
+          } else {
+            this.button_text = 'Message not sent'
+          }
+        })
     },
   },
 }
@@ -213,8 +228,7 @@ export default {
 }
 
 .contact {
-  @apply 
-  flex
+  @apply flex
   flex-col-reverse
   lg:grid
   grid-cols-12;
@@ -260,7 +274,7 @@ export default {
 }
 
 .contact_social {
-  @apply flex items-center
+  @apply flex items-center;
 }
 
 .contact_social a svg {
@@ -271,7 +285,7 @@ export default {
   p-1
   hover:bg-white
   hover:text-gray-700
-  rounded-lg
+  rounded-lg;
 }
 
 .contact_form .input {
@@ -330,12 +344,12 @@ form button {
   bg-gray-700
   rounded-lg
   text-right
-  hover:bg-gray-800
+  hover:bg-gray-800;
 }
 
 form button:active {
   @apply bg-yellow-100
-  text-gray-600
+  text-gray-600;
 }
 
 .button {

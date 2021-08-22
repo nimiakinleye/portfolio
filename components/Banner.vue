@@ -16,7 +16,7 @@
           web developer with in-depth knowledge in JavaScript front-end
           frameworks (Vue.js and React.js)
         </p>
-        <button>HIRE ME</button>
+        <nuxt-link to="#contact"><button>HIRE ME</button></nuxt-link>
       </div>
       <BannerVector />
     </div>
@@ -42,7 +42,11 @@ export default {
   background-repeat: no-repeat;
   @apply bg-gray-700
   py-12
-  text-white;
+  text-white
+  flex
+  flex-col
+  justify-center
+  min-h-screen;
 }
 
 .banner .b_ner {
@@ -104,6 +108,12 @@ export default {
   text-gray-700
   py-1
   px-3
-  rounded-md;
+  rounded-md
+  hover:bg-gray-200
+  ;
+}
+
+.banner button:active {
+  @apply bg-yellow-100
 }
 </style>

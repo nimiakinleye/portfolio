@@ -3,12 +3,12 @@
     <nav>
       <div @click="navigate('portfolio')" class="nav-link">Portfolio</div>
       <div @click="navigate('home')" class="nav-link">Home</div>
-      <div class="nav-link">Contact Me</div>
+      <div @click="navigate('contact')" class="nav-link">Contact Me</div>
     </nav>
     <nav :class="{ show: position, hide: !position }" class="fixed_header">
       <div @click="navigate('portfolio')" class="nav-link">Portfolio</div>
       <div @click="navigate('home')" class="nav-link">Home</div>
-      <div class="nav-link">Contact Me</div>
+      <div @click="navigate('contact')" class="nav-link">Contact Me</div>
     </nav>
   </div>
 </template>

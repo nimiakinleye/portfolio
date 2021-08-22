@@ -3,7 +3,8 @@
 		<Header id="home"/>
     <Banner />
     <Benefits />
-    <Portfolio id="portfolio"/>
+    <Portfolio class="pt-16" id="portfolio"/>
+    <Contact class="pt-16 mt-48 lg:mt-0" id="contact"/>
 	</div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from '~/components/Header.vue'
 import Banner from '~/components/Banner.vue'
 import Benefits from '~/components/Benefits.vue'
 import Portfolio from '~/components/Portfolio.vue'
+import Contact from '~/components/Contact.vue'
 export default {
   head () {
     return {
@@ -23,6 +25,7 @@ export default {
     Banner,
     Benefits,
     Portfolio,
+    Contact,
   },
   data () {
     return {
@@ -53,5 +56,9 @@ export default {
 <style>
 html {
   scroll-behavior: smooth;
+}
+
+.container {
+  @apply w-full
 }
 </style>

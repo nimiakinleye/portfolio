@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(job, i) in jobs" :key="i" class="job">
+    <div data-aos="zoom-in" v-for="(job, i) in jobs" :key="i" class="job">
       <div class="flex flex-col shadow-2xl">
         <img
           class="rounded-t-lg"

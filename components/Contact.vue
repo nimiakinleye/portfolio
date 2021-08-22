@@ -1,11 +1,11 @@
 <template>
   <div class="lg:mb-20">
-    <div class="header">
+    <div data-aos="fade-up" class="header">
       <h1>Contact Me</h1>
       <p>Any Questions or remarks, just write me a message!</p>
     </div>
     <div class="contact">
-      <div class="contact_information">
+      <div data-aos="fade-up-right" class="contact_information">
         <div>
           <h2>Contact Information</h2>
           <p>Fill up the form and I'll get back to you within 24 hours.</p>
@@ -94,7 +94,7 @@
           </a>
         </div>
       </div>
-      <div class="contact_form">
+      <div data-aos="fade-up-left" class="contact_form">
         <form @submit.prevent="submit">
           <div class="md:grid grid-cols-2 gap-x-12">
             <div class="input">

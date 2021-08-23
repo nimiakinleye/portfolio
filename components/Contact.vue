@@ -24,7 +24,7 @@
                 </g>
               </g>
             </svg>
-            <p>+(234) 708 606 2512</p>
+            <p>+(234) 708 506 2512</p>
           </div>
           <div class="contact_medium">
             <svg

@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:mb-20">
+  <div>
     <div data-aos="fade-up" class="header">
       <h1>Contact Me</h1>
       <p>Any Questions or remarks, just write me a message!</p>
